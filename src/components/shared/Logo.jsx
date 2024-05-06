@@ -9,7 +9,7 @@ function Logo({ imageSize, textSize }) {
           src={LogoImage}
           alt="Flight Planner log of an outline of a commercial jet"
         />
-        <h2 className={`${textSize}`}>Flight Planner</h2>
+        <h2 className={`pl-2 ${textSize}`}>Flight Planner</h2>
       </div>
     </>
   );
