@@ -1,4 +1,4 @@
-function Link() {
+export default function Link() {
   return (
     <>
       <div className="font-primary">
@@ -9,5 +9,3 @@ function Link() {
     </>
   );
 }
-
-export default Link;
