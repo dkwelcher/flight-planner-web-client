@@ -1,6 +1,6 @@
 import LogoImage from "../../assets/flight-planner-logo.png";
 
-function Logo({ imageSize, textSize }) {
+export default function Logo({ imageSize, textSize, textColor }) {
   return (
     <>
       <div className="flex items-center font-secondary">
@@ -9,10 +9,8 @@ function Logo({ imageSize, textSize }) {
           src={LogoImage}
           alt="Flight Planner log of an outline of a commercial jet"
         />
-        <h2 className={`pl-2 ${textSize}`}>Flight Planner</h2>
+        <h2 className={`pl-2 ${textSize} ${textColor}`}>Flight Planner</h2>
       </div>
     </>
   );
 }
-
-export default Logo;
