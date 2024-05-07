@@ -6,7 +6,7 @@ export default function LandingPage() {
     <>
       <div className="h-screen flex flex-col justify-center items-center gap-y-6 bg-sky-50">
         <Logo imageSize="size-16" textSize="text-4xl" />
-        <Link />
+        <Link navigationPath={"/dashboard"} />
       </div>
     </>
   );
