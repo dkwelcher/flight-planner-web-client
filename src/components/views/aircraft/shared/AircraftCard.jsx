@@ -23,7 +23,7 @@ export default function AircraftCard({
       }`}
       key={aircraftId}
     >
-      <div className="pb-2 font-secondary font-bold text-2xl">
+      <div className="pb-2 font-secondary font-bold text-3xl text-sky-950">
         <h4>
           {aircraftMake} {aircraftModel}
         </h4>
