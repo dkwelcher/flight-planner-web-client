@@ -64,12 +64,14 @@ export default function AircraftCard({
       </div>
       <div className={buttonContainerStyle}>
         <Button
+          uniqueStyles={"lg:justify-self-end"}
           buttonText={"Edit"}
           handleUserAction={() => {
             console.log(aircraftId);
           }}
         />
         <Button
+          uniqueStyles={"lg:justify-self-start"}
           buttonText={"Delete"}
           handleUserAction={() => {
             console.log(aircraftId);
