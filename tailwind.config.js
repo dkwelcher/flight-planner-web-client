@@ -9,6 +9,7 @@ export default {
       backgroundImage: {
         "manage-aircraft-intro-desktop":
           "url('/src/assets/prop-countryside.png')",
+        "transparent-shadow": "linear-gradient(rgb(0 0 0/40%) 0 0)",
       },
       fontFamily: {
         primary: ["Prompt", "sans-serif"],
