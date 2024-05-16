@@ -1,58 +1,32 @@
 import { useState } from "react";
 import IntroSection from "../shared/IntroSection";
-import Button from "../shared/Button";
+import Button from "../../shared/Button";
 import AircraftCard from "./shared/AircraftCard";
+import SelectAircraftMakeModal from "../../modals/SelectAircraftMakeModal";
 
 export default function ManageAircraft() {
-  const [aircraftList, setAircraftList] = useState([
-    {
-      aircraftId: 31,
-      aircraftMake: "Boeing",
-      aircraftModel: "747",
-      aircraftType: "jet",
-      fuelType: "jeta",
-      fuelTankSize: 79304.0,
-      fuelBurnRate: 6000.0,
-      airspeed: 550.0,
-      range: 7269.53,
-      minimumRunwayLengthRequired: 6500,
-    },
-    {
-      aircraftId: 32,
-      aircraftMake: "Boeing",
-      aircraftModel: "777",
-      aircraftType: "jet",
-      fuelType: "jeta",
-      fuelTankSize: 126000.0,
-      fuelBurnRate: 8000.0,
-      airspeed: 550.0,
-      range: 8662.5,
-      minimumRunwayLengthRequired: 7000,
-    },
-    {
-      aircraftId: 35,
-      aircraftMake: "Beechcraft",
-      aircraftModel: "Bonanza",
-      aircraftType: "prop",
-      fuelType: "avgas",
-      fuelTankSize: 200.0,
-      fuelBurnRate: 40.0,
-      airspeed: 130.0,
-      range: 650.5,
-      minimumRunwayLengthRequired: 1500,
-    },
-  ]);
+  const [aircraftList, setAircraftList] = useState([]);
+  const [aircraft, setAircraft] = useState({});
+
+  const [isSelectAircraftMakeModalOpen, setIsSelectAircraftMakeModalOpen] =
+    useState(false);
 
   function handleCreateAircraft() {
     console.log("createaircraft");
   }
 
   function handleSelectAircraft() {
-    console.log("selectaircraft");
+    setIsSelectAircraftMakeModalOpen(true);
   }
 
   return (
     <div>
+      {isSelectAircraftMakeModalOpen && (
+        <SelectAircraftMakeModal
+          setIsSelectAircraftModalOpen={setIsSelectAircraftMakeModalOpen}
+          setAircraftList={setAircraftList}
+        />
+      )}
       <div>
         <IntroSection
           backgroundImage={"bg-manage-aircraft-intro-desktop"}
@@ -64,18 +38,10 @@ export default function ManageAircraft() {
         <Button buttonText={"Create"} handleUserAction={handleCreateAircraft} />
         <Button buttonText={"Select"} handleUserAction={handleSelectAircraft} />
       </div>
-      <div className="px-2">
+      <div className="px-2 lg:grid lg:grid-cols-2 lg:gap-x-2 2xl:grid-cols-3">
         {aircraftList.map((aircraft, index) => (
           <AircraftCard
-            aircraftId={aircraft.aircraftId}
-            aircraftMake={aircraft.aircraftMake}
-            aircraftModel={aircraft.aircraftModel}
-            aircraftType={aircraft.aircraftType}
-            fuelType={aircraft.fuelType}
-            fuelTankSize={aircraft.fuelTankSize}
-            fuelBurnRate={aircraft.fuelBurnRate}
-            airspeed={aircraft.airspeed}
-            minimumRunwayLengthRequired={aircraft.minimumRunwayLengthRequired}
+            aircraft={aircraft}
             index={index}
             key={aircraft.aircraftId}
           />
